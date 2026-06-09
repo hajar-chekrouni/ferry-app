@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Header } from "@/components/layout/Header";
 import { AccountBookingsList } from "@/components/account/AccountBookingsList";
 import { AccountHeader } from "@/components/account/AccountHeader";

@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getBooking } from "@/lib/booking/store";
 import { getSailingById } from "@/lib/operators/get-sailing";
 import { formatDuration } from "@/lib/utils";

@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Header } from "@/components/layout/Header";
 import { PaymentGate } from "@/components/booking/PaymentGate";
 import { getBooking } from "@/lib/booking/store";
