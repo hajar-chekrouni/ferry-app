@@ -33,7 +33,7 @@ interface Props {
 
 export function SearchResults({ outbound, inbound, searchParams }: Props) {
   const router = useRouter();
-  const [sort, setSort] = useState<SortKey>("departure");
+  const [sort, setSort] = useState<SortKey>("price");
   const [filters, setFilters] = useState<FilterState>(defaultFilters());
   const [selectedOutbound, setSelectedOutbound] =
     useState<NormalisedSailing | null>(null);
