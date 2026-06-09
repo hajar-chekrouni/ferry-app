@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Anchor, Menu } from "lucide-react";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Header() {
   return (
@@ -22,12 +21,10 @@ export function Header() {
           >
             Mes réservations
           </Link>
-          <LanguageSwitcher />
         </nav>
 
         {/* Mobile: language switcher + hamburger placeholder */}
         <div className="flex items-center gap-2 sm:hidden">
-          <LanguageSwitcher />
           <button
             aria-label="Menu"
             className="rounded-md p-2 text-muted-foreground hover:bg-gray-100"
