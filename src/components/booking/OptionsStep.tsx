@@ -4,12 +4,15 @@ import { BookingOptions } from "@/lib/booking/types";
 import { NormalisedSailing } from "@/lib/operators/types";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Bed, PawPrint, UtensilsCrossed, RefreshCw, Armchair } from "lucide-react";
+import { Bed, PawPrint, UtensilsCrossed, RefreshCw, Armchair, Car } from "lucide-react";
 
 interface Props {
   options: BookingOptions;
   outbound: NormalisedSailing;
   hasReturn: boolean;
+  hasVehicle: boolean;
+  showVehicleToggle: boolean;
+  onVehicleToggle: (v: boolean) => void;
   onChange: (o: BookingOptions) => void;
   onNext: () => void;
 }
@@ -130,7 +133,7 @@ function Counter({
 const hasAccommodation = (s: NormalisedSailing) =>
   s.amenities.some((a) => a.toLowerCase().includes("cabin") || a.toLowerCase().includes("cabine"));
 
-export function OptionsStep({ options, outbound, hasReturn, onChange, onNext }: Props) {
+export function OptionsStep({ options, outbound, hasReturn, hasVehicle, showVehicleToggle, onVehicleToggle, onChange, onNext }: Props) {
   const showAccommodation = hasAccommodation(outbound);
   const legs = hasReturn ? 2 : 1;
 
@@ -143,6 +146,36 @@ export function OptionsStep({ options, outbound, hasReturn, onChange, onNext }: 
           {legs === 2 ? "vos deux trajets" : "votre trajet"}.
         </p>
       </div>
+
+      {/* Vehicle toggle */}
+      {showVehicleToggle && (
+        <section className="space-y-3">
+          <h3 className="font-medium">Véhicule</h3>
+          <label className={cn(
+            "flex cursor-pointer items-center gap-4 rounded-xl border p-4 transition-all",
+            hasVehicle ? "border-primary bg-primary/5 ring-2 ring-primary/20" : ""
+          )}>
+            <div className={cn(
+              "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg",
+              hasVehicle ? "bg-primary text-white" : "bg-muted text-muted-foreground"
+            )}>
+              <Car className="h-5 w-5" />
+            </div>
+            <div className="flex-1">
+              <p className="font-medium">Embarquer mon véhicule</p>
+              <p className="text-sm text-muted-foreground">
+                {hasVehicle ? "Véhicule inclus dans la réservation" : "Voyage sans véhicule (passager uniquement)"}
+              </p>
+            </div>
+            <input
+              type="checkbox"
+              checked={hasVehicle}
+              onChange={(e) => onVehicleToggle(e.target.checked)}
+              className="h-5 w-5 accent-primary"
+            />
+          </label>
+        </section>
+      )}
 
       {/* Accommodation */}
       {showAccommodation && (

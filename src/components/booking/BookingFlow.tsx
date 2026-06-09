@@ -54,7 +54,7 @@ function buildInitialPassengers(
 
 export function BookingFlow({ outbound, inbound, searchParams }: Props) {
   const router = useRouter();
-  const hasVehicle = !!searchParams.vehicleCategory;
+  const [hasVehicle, setHasVehicle] = useState(!!searchParams.vehicleCategory);
 
   const [step, setStep] = useState<BookingStep>("options");
   const [options, setOptions] = useState<BookingOptions>(DEFAULT_OPTIONS);
@@ -142,6 +142,9 @@ export function BookingFlow({ outbound, inbound, searchParams }: Props) {
               options={options}
               outbound={outbound}
               hasReturn={!!inbound}
+              hasVehicle={hasVehicle}
+              showVehicleToggle={!!searchParams.vehicleCategory}
+              onVehicleToggle={setHasVehicle}
               onChange={setOptions}
               onNext={goNext}
             />
