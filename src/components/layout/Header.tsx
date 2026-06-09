@@ -38,10 +38,8 @@ export function Header() {
           </Link>
           <Link
             href="/search?adults=1"
-            className="rounded-full px-5 py-2 text-sm font-semibold text-white transition-colors"
+            className="rounded-full px-5 py-2 text-sm font-semibold text-white transition-colors hover:opacity-90"
             style={{ backgroundColor: "#0F2549" }}
-            onMouseEnter={(e) => ((e.target as HTMLElement).style.backgroundColor = "#1A3563")}
-            onMouseLeave={(e) => ((e.target as HTMLElement).style.backgroundColor = "#0F2549")}
           >
             Réserver
           </Link>
