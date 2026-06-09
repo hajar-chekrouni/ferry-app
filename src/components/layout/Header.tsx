@@ -3,36 +3,45 @@ import { Anchor } from "lucide-react";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-[#E6EAF0] bg-white shadow-sm" style={{ height: "64px" }}>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2 font-bold text-blue-700 text-lg">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 font-bold text-lg" style={{ color: "#0F2549" }}>
           <Anchor className="h-5 w-5" />
           <span>FerryCompare</span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 text-sm font-medium sm:flex">
-          <Link href="/" className="text-gray-600 hover:text-blue-700 transition-colors">
-            Accueil
-          </Link>
-          <Link href="/search?from=TNG&to=ALG&adults=1" className="text-gray-600 hover:text-blue-700 transition-colors">
+        <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
+          <Link href="/search?adults=1" className="transition-colors hover:text-blue-600" style={{ color: "#5B6573" }}>
             Traversées
           </Link>
-          <Link href="/account" className="text-gray-600 hover:text-blue-700 transition-colors">
-            Mes réservations
+          <Link href="/search?adults=1" className="transition-colors hover:text-blue-600" style={{ color: "#5B6573" }}>
+            Liaisons
+          </Link>
+          <Link href="#compagnies" className="transition-colors hover:text-blue-600" style={{ color: "#5B6573" }}>
+            Compagnies
+          </Link>
+          <Link href="/search?adults=1" className="transition-colors hover:text-blue-600" style={{ color: "#5B6573" }}>
+            Tarifs
           </Link>
         </nav>
 
+        {/* Right */}
         <div className="flex items-center gap-3">
           <Link
             href="/auth/login"
-            className="hidden text-sm font-medium text-gray-600 hover:text-blue-700 sm:block transition-colors"
+            className="hidden text-sm font-medium transition-colors hover:text-blue-600 md:block"
+            style={{ color: "#5B6573" }}
           >
             Connexion
           </Link>
           <Link
-            href="/"
-            className="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-blue-700 transition-colors"
+            href="/search?adults=1"
+            className="rounded-full px-5 py-2 text-sm font-semibold text-white transition-colors"
+            style={{ backgroundColor: "#0F2549" }}
+            onMouseEnter={(e) => ((e.target as HTMLElement).style.backgroundColor = "#1A3563")}
+            onMouseLeave={(e) => ((e.target as HTMLElement).style.backgroundColor = "#0F2549")}
           >
             Réserver
           </Link>

@@ -23,9 +23,21 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-navy: var(--brand-navy);
+  --color-navy-hover: var(--brand-navy-hover);
+  --color-brand-red: var(--brand-red);
+  --color-section-bg: var(--brand-bg-section);
 }
 
 :root {
+  --brand-navy: #0F2549;
+  --brand-navy-hover: #1A3563;
+  --brand-accent: #2563EB;
+  --brand-red: #E8554D;
+  --brand-bg-section: #F4F6F9;
+  --brand-border: #E6EAF0;
+  --brand-text-body: #5B6573;
+  --brand-text-muted: #8A93A1;
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
   --card: 0 0% 100%;
