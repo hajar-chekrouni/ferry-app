@@ -118,7 +118,14 @@ export function AuthForm({ mode, next = "/account", supabaseConfigured, error: i
           </div>
 
           <div className="space-y-1">
-            <Label>Mot de passe *</Label>
+            <div className="flex items-center justify-between">
+              <Label>Mot de passe *</Label>
+              {mode === "login" && (
+                <Link href="/auth/forgot-password" className="text-xs text-primary hover:underline">
+                  Mot de passe oublié ?
+                </Link>
+              )}
+            </div>
             <Input
               type="password"
               value={password}
