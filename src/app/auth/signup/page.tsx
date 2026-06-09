@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Header } from "@/components/layout/Header";
 import { AuthForm } from "@/components/auth/AuthForm";
 import { isSupabaseConfigured } from "@/lib/supabase/server";

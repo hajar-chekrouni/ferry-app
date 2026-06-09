@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getSailingById } from "@/lib/operators/get-sailing";
 import { BookingFlow } from "@/components/booking/BookingFlow";
 import { Header } from "@/components/layout/Header";

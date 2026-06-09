@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { SearchWidget } from "@/components/search/SearchWidget";
 import { Header } from "@/components/layout/Header";
 import { Anchor } from "lucide-react";

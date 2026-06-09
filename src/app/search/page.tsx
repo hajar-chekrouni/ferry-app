@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { aggregateSearch } from "@/lib/search/aggregator";
 import { SearchQuerySchema } from "@/lib/operators/types";
 import { SearchResults } from "@/components/search/SearchResults";
